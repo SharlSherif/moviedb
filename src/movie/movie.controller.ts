@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { MovieService } from './movie.service';
 import { CreateMovieDto } from './dto/create-movie.dto';
@@ -27,6 +28,11 @@ export class MovieController {
   @Get()
   findAll() {
     return this.movieService.repository.getAll();
+  }
+
+  @Get('list')
+  async fetchAllMovies(@Query('query') query: string) {
+    return await this.movieService.fetchMovies(query);
   }
 
   @Get(':id')
