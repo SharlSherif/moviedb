@@ -14,7 +14,7 @@ class MongooseOptions {
 
 @Injectable()
 export default class MongooseRepository<T> {
-  protected model: Model<T & Document>;
+  model: Model<T & Document>;
 
   constructor(model: Model<T & Document>) {
     this.model = model;

@@ -37,7 +37,7 @@ export class MovieController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.movieService.repository.getFirst(id);
+    return this.movieService.repository.getById(id);
   }
 
   @Patch(':id')

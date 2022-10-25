@@ -3,10 +3,10 @@ import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
 import { Movie, MovieDocument } from './entities/movie.entity';
 import { Model } from 'mongoose';
-import { InjectModel } from '@nestjs/mongoose/dist';
+import { InjectModel } from '@nestjs/mongoose';
 import MongooseRepository from 'src/classes/mongoose.repository';
 import * as axios from 'axios';
-import { HttpService } from '@nestjs/axios/dist';
+import { HttpService } from '@nestjs/axios';
 
 @Injectable()
 export class MovieService {
